@@ -15,7 +15,7 @@ export default function Home() {
           <p className="eyebrow"><span /> Strategy · Product · Leadership</p>
           <h1>Building the systems<br />behind <em>meaningful</em> progress.</h1>
           <p className="hero-lede">
-            I’m Avery Morgan, a strategic operator helping ambitious teams turn
+            I’m Zachary Wotawa, a strategic operator helping ambitious teams turn
             complex ideas into clear direction, durable products, and measurable growth.
           </p>
           <div className="button-row">

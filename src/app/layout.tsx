@@ -8,7 +8,7 @@ const display = Manrope({ variable: "--font-display", subsets: ["latin"] });
 const body = DM_Sans({ variable: "--font-body", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "Avery Morgan — Strategy, Product & Leadership", template: "%s — Avery Morgan" },
+  title: { default: "Zachary Wotawa — Strategy, Product & Leadership", template: "%s — Zachary Wotawa" },
   description: "Strategic operator helping ambitious teams turn complex ideas into clear direction, durable products, and measurable growth.",
 };
 

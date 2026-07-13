@@ -8,10 +8,10 @@ export function Footer() {
       <div><h2>Have a meaningful challenge?</h2><Link href="/contact">Let’s work through it. <ArrowUpRight /></Link></div>
     </div>
     <div className="shell footer-bottom">
-      <Link className="brand footer-brand" href="/"><span>AM</span><strong>Avery<br/>Morgan</strong></Link>
+      <Link className="brand footer-brand" href="/"><span>ZW</span><strong>Zachary<br/>Wotawa</strong></Link>
       <p>Strategy, product, and leadership<br/>for teams going somewhere.</p>
       <div className="footer-links"><Link href="/about">About</Link><Link href="/projects">Projects</Link><Link href="/advancement">Advancement</Link><a href="https://www.linkedin.com" aria-label="LinkedIn"><LinkedIn /></a></div>
-      <small>© {new Date().getFullYear()} Avery Morgan</small>
+      <small>© {new Date().getFullYear()} Zachary Wotawa</small>
     </div>
   </footer>;
 }

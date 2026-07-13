@@ -13,7 +13,7 @@ export function Header() {
   const pathname = usePathname();
   return <header className="site-header">
     <div className="shell nav-wrap">
-      <Link className="brand" href="/" aria-label="Avery Morgan home"><span>AM</span><strong>Avery<br/>Morgan</strong></Link>
+      <Link className="brand" href="/" aria-label="Zachary Wotawa home"><span>ZW</span><strong>Zachary<br/>Wotawa</strong></Link>
       <nav aria-label="Primary navigation">
         {links.map(([href, label]) => <Link key={href} href={href} className={pathname === href ? "active" : ""}>{label}</Link>)}
       </nav>
