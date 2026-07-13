@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "./icons";
 
 const links = [
-  ["/", "Home"], ["/about", "About"], ["/projects", "Projects"],
+  ["/projects", "Projects"], ["/about", "About"],
   ["/advancement", "Advancement"], ["/contact", "Contact"],
 ];
 

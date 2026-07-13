@@ -8,8 +8,8 @@ const display = Manrope({ variable: "--font-display", subsets: ["latin"] });
 const body = DM_Sans({ variable: "--font-body", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "Zachary Wotawa — Strategy, Product & Leadership", template: "%s — Zachary Wotawa" },
-  description: "Strategic operator helping ambitious teams turn complex ideas into clear direction, durable products, and measurable growth.",
+  title: { default: "Zachary Wotawa — Software Developer", template: "%s — Zachary Wotawa" },
+  description: "Software developer building practical, user-centered systems with a background in business, accounting, and agile delivery.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
