@@ -2,19 +2,114 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "../ui/icons";
 
-export const metadata: Metadata = { title: "Projects", description: "Selected strategy, product, and transformation work." };
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Selected software development projects by Zachary Wotawa, including full-stack applications and user-centered web experiences.",
+};
 
 const projects = [
-  { n:"01", type:"Growth strategy", title:"A new growth engine for an evolving market", result:"+64% activation", className:"project-coral", tags:["Strategy", "Customer journey", "Operating model"] },
-  { n:"02", type:"Product portfolio", title:"One product story from a fragmented portfolio", result:"8 teams aligned", className:"project-blue", tags:["Portfolio", "Positioning", "Roadmap"] },
-  { n:"03", type:"Organizational design", title:"Rebuilding the conditions for creative work", result:"2× faster decisions", className:"project-gold", tags:["Team design", "Ways of working", "Leadership"] },
-  { n:"04", type:"New venture", title:"From emerging need to a validated proposition", result:"14 weeks to pilot", className:"project-mint", tags:["Research", "Venture design", "Go-to-market"] },
+  {
+    number: "01",
+    type: "Full-stack application",
+    title: "Life Copilot",
+    summary:
+      "A personal productivity experience designed to turn everyday priorities into focused, manageable action. The project explores how thoughtful workflows and clear feedback can help people move from intention to progress.",
+    highlight: "Productivity, simplified",
+    className: "project-coral",
+    tags: ["Product thinking", "Full stack", "UX"],
+  },
+  {
+    number: "02",
+    type: "Community platform",
+    title: "Tool Share App",
+    summary:
+      "A community-focused application that makes it easier to discover, borrow, and manage shared tools. It brings together a responsive interface, RESTful services, and persistent data around a practical local need.",
+    highlight: "Built for sharing",
+    className: "project-blue",
+    tags: ["React", "REST API", "Database"],
+  },
+  {
+    number: "03",
+    type: "Front-end experience",
+    title: "Website Redesign",
+    summary:
+      "A responsive redesign centered on clearer navigation, accessible content, and a more useful user journey. The work balances visual refinement with practical improvements to structure and usability.",
+    highlight: "Clearer by design",
+    className: "project-gold",
+    tags: ["TypeScript", "Responsive design", "UI / UX"],
+  },
+  {
+    number: "04",
+    type: "Professional portfolio",
+    title: "This Website",
+    summary:
+      "A custom portfolio built to communicate my experience, projects, and current direction as a software developer. It uses reusable components, responsive layouts, and a cohesive design system across five routes.",
+    highlight: "Next.js 16",
+    className: "project-mint",
+    tags: ["Next.js", "React", "TypeScript", "Responsive design"],
+  },
 ];
 
 export default function ProjectsPage() {
-  return <>
-    <section className="page-hero shell split-hero projects-hero"><div><p className="eyebrow"><span/> Selected work</p><h1>Ideas made <em>real.</em></h1></div><p className="intro-copy">A selection of engagements where a sharper question, a shared direction, and practical momentum changed what was possible.</p></section>
-    <section className="shell project-list">{projects.map((p)=><article className="project-row" key={p.n}><div className={`project-image ${p.className}`}><span className="project-index">{p.n}</span><div className="visual-shape one"/><div className="visual-shape two"/><strong>{p.result}</strong></div><div className="project-copy"><p className="eyebrow"><span/> {p.type}</p><h2>{p.title}</h2><div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div><p>Bringing customer evidence and commercial ambition into one clear system for action—from the executive room to the teams doing the work.</p><Link href="/contact" className="text-link">Discuss a similar challenge <ArrowUpRight/></Link></div></article>)}</section>
-    <section className="project-note"><div className="shell"><span>Beyond the case studies</span><p>Much of my work is confidential. I’m happy to share more about relevant sectors, challenges, and outcomes in conversation.</p><Link href="/contact" className="button button-light">Start a conversation <ArrowUpRight/></Link></div></section>
-  </>;
+  return (
+    <>
+      <section className="page-hero shell split-hero projects-hero">
+        <div>
+          <p className="eyebrow">
+            <span /> Selected work
+          </p>
+          <h1>
+            Ideas made <em>real.</em>
+          </h1>
+        </div>
+        <p className="intro-copy">
+          A growing body of work focused on practical problems, thoughtful user
+          experiences, and building complete systems from concept to delivery.
+        </p>
+      </section>
+
+      <section className="shell project-list">
+        {projects.map((project) => (
+          <article className="project-row" key={project.number}>
+            <div className={`project-image ${project.className}`}>
+              <span className="project-index">{project.number}</span>
+              <div className="visual-shape one" />
+              <div className="visual-shape two" />
+              <strong>{project.highlight}</strong>
+            </div>
+
+            <div className="project-copy">
+              <p className="eyebrow">
+                <span /> {project.type}
+              </p>
+              <h2>{project.title}</h2>
+              <div className="tag-row">
+                {project.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+              <p>{project.summary}</p>
+              <Link href="/contact" className="text-link">
+                Ask me about this project <ArrowUpRight />
+              </Link>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="project-note">
+        <div className="shell">
+          <span>More in progress</span>
+          <p>
+            I’m continuing to expand these projects as I deepen my full-stack,
+            system design, and cloud deployment skills.
+          </p>
+          <Link href="/contact" className="button button-light">
+            Start a conversation <ArrowUpRight />
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }
