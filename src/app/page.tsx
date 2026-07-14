@@ -12,26 +12,29 @@ import {
 const featuredProjects = [
   {
     number: "01",
+    slug: "life-copilot",
     title: "Life Copilot",
     description:
-      "A personal productivity experience designed to turn everyday priorities into focused, manageable action.",
-    tags: ["Product thinking", "Full stack", "UX"],
+      "A personal productivity system for weekly planning, daily rotation, progress tracking, and adaptive goal surfacing.",
+    tags: ["Angular", ".NET", "PostgreSQL"],
     className: "home-project-coral",
   },
   {
     number: "02",
+    slug: "tool-share-app",
     title: "Tool Share App",
     description:
-      "A community-focused application that makes it easier to discover, borrow, and manage shared tools.",
-    tags: ["React", "REST API", "Database"],
+      "A full-stack app for friends to list tools, request to borrow them, and track ownership and borrowing status.",
+    tags: ["React", "Spring Boot", "Docker"],
     className: "home-project-blue",
   },
   {
     number: "03",
-    title: "Website Redesign",
+    slug: "website-redesign",
+    title: "Mom’s Website Redesign",
     description:
-      "A responsive redesign centered on clearer navigation, accessible content, and a more useful user journey.",
-    tags: ["TypeScript", "Responsive", "UI"],
+      "A modernized personal and business website concept with clearer messaging, improved layout, and a more professional presentation.",
+    tags: ["UX", "Responsive", "Client work"],
     className: "home-project-gold",
   },
 ];
@@ -137,7 +140,7 @@ export default function Home() {
         <div className="home-project-grid">
           {featuredProjects.map((project) => (
             <Link
-              href="/projects"
+              href={`/projects/${project.slug}`}
               className={`home-project-card ${project.className}`}
               key={project.number}
             >

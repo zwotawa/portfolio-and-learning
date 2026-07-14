@@ -1,55 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "../ui/icons";
+import { projects } from "./project-data";
 
 export const metadata: Metadata = {
   title: "Projects",
   description:
     "Selected software development projects by Zachary Wotawa, including full-stack applications and user-centered web experiences.",
 };
-
-const projects = [
-  {
-    number: "01",
-    type: "Full-stack application",
-    title: "Life Copilot",
-    summary:
-      "A personal productivity experience designed to turn everyday priorities into focused, manageable action. The project explores how thoughtful workflows and clear feedback can help people move from intention to progress.",
-    highlight: "Productivity, simplified",
-    className: "project-coral",
-    tags: ["Product thinking", "Full stack", "UX"],
-  },
-  {
-    number: "02",
-    type: "Community platform",
-    title: "Tool Share App",
-    summary:
-      "A community-focused application that makes it easier to discover, borrow, and manage shared tools. It brings together a responsive interface, RESTful services, and persistent data around a practical local need.",
-    highlight: "Built for sharing",
-    className: "project-blue",
-    tags: ["React", "REST API", "Database"],
-  },
-  {
-    number: "03",
-    type: "Front-end experience",
-    title: "Website Redesign",
-    summary:
-      "A responsive redesign centered on clearer navigation, accessible content, and a more useful user journey. The work balances visual refinement with practical improvements to structure and usability.",
-    highlight: "Clearer by design",
-    className: "project-gold",
-    tags: ["TypeScript", "Responsive design", "UI / UX"],
-  },
-  {
-    number: "04",
-    type: "Professional portfolio",
-    title: "This Website",
-    summary:
-      "A custom portfolio built to communicate my experience, projects, and current direction as a software developer. It uses reusable components, responsive layouts, and a cohesive design system across five routes.",
-    highlight: "Next.js 16",
-    className: "project-mint",
-    tags: ["Next.js", "React", "TypeScript", "Responsive design"],
-  },
-];
 
 export default function ProjectsPage() {
   return (
@@ -90,12 +48,64 @@ export default function ProjectsPage() {
                 ))}
               </div>
               <p>{project.summary}</p>
-              <Link href="/contact" className="text-link">
-                Ask me about this project <ArrowUpRight />
+              <Link href={`/projects/${project.slug}`} className="text-link">
+                View project details <ArrowUpRight />
               </Link>
             </div>
           </article>
         ))}
+      </section>
+
+      <section className="learning-work-section">
+        <div className="shell learning-work-grid">
+          <div className="learning-work-heading">
+            <p className="eyebrow light">
+              <span /> Learning / CS degree work
+            </p>
+            <h2>
+              Strengthening the<br />foundations behind the build.
+            </h2>
+            <p>
+              My computer science coursework complements my portfolio projects
+              with deeper practice in the concepts that make software reliable,
+              understandable, and maintainable.
+            </p>
+          </div>
+
+          <div className="learning-work-list">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Core computer science</h3>
+                <p>
+                  Developing stronger foundations in algorithms, data
+                  structures, object-oriented programming, and computational
+                  problem solving.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Software engineering</h3>
+                <p>
+                  Applying requirements analysis, testing, version control,
+                  documentation, and collaborative development practices.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Systems and data</h3>
+                <p>
+                  Expanding my understanding of databases, system design, APIs,
+                  and the way application layers work together.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section className="project-note">
