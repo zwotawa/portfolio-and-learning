@@ -9,7 +9,7 @@ export function Footer() {
     </div>
     <div className="shell footer-bottom">
       <Link className="brand footer-brand" href="/"><span>ZW</span><strong>Zachary<br/>Wotawa</strong></Link>
-      <p>Strategy, product, and leadership<br/>for teams going somewhere.</p>
+      <p>Practical software, real workflows,<br/>and steady technical growth.</p>
       <div className="footer-links"><Link href="/about">About</Link><Link href="/projects">Projects</Link><Link href="/advancement">Advancement</Link><a href="https://www.linkedin.com" aria-label="LinkedIn"><LinkedIn /></a></div>
       <small>© {new Date().getFullYear()} Zachary Wotawa</small>
     </div>
