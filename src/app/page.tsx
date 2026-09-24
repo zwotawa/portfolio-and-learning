@@ -31,7 +31,7 @@ const featuredProjects = [
   {
     number: "03",
     slug: "website-redesign",
-    title: "Mom’s Website Redesign",
+    title: "Website Redesign",
     description:
       "A modernized personal and business website concept with clearer messaging, improved layout, and a more professional presentation.",
     tags: ["UX", "Responsive", "Client work"],

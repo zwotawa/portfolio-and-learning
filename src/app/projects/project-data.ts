@@ -106,7 +106,7 @@ export const projects: Project[] = [
     slug: "website-redesign",
     number: "03",
     type: "Front-end experience",
-    title: "Mom’s Website Redesign",
+    title: "Website Redesign",
     summary:
       "A modernized website concept for a small personal and business site, focused on clearer messaging, improved layout, and a more professional visual presentation.",
     problem:
