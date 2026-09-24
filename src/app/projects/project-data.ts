@@ -16,12 +16,14 @@ export type Project = {
   className: string;
   tags: string[];
   liveUrl?: string;
+  repositoryUrl?: string;
   status?: "planning";
 };
 
 export const projects: Project[] = [
   {
     slug: "life-copilot",
+    repositoryUrl: "https://github.com/zwotawa/life-copilot",
     number: "01",
     type: "Full-stack application",
     title: "Life Copilot",
@@ -63,6 +65,7 @@ export const projects: Project[] = [
   },
   {
     slug: "tool-share-app",
+    repositoryUrl: "https://github.com/zwotawa/toolshare",
     status: "planning",
     number: "02",
     type: "Work in progress · Planning & setup",
@@ -104,6 +107,7 @@ export const projects: Project[] = [
   },
   {
     slug: "website-redesign",
+    repositoryUrl: "https://github.com/zwotawa/nightly-wisdom",
     number: "03",
     type: "Front-end experience",
     title: "Website Redesign",

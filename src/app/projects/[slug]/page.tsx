@@ -153,9 +153,15 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               <h2>Interface preview.</h2>
             </div>
             <div className="proof-links">
-              <span className="proof-unavailable">
-                <Github /> Repository link coming soon
-              </span>
+              {project.repositoryUrl ? (
+                <a href={project.repositoryUrl} className="text-link">
+                  <Github /> View repository <ArrowUpRight />
+                </a>
+              ) : (
+                <span className="proof-unavailable">
+                  <Github /> Repository link coming soon
+                </span>
+              )}
               {project.liveUrl && (
                 <Link href={project.liveUrl} className="text-link">
                   View live project <ArrowUpRight />
