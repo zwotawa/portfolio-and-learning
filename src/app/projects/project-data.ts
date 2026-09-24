@@ -16,6 +16,7 @@ export type Project = {
   className: string;
   tags: string[];
   liveUrl?: string;
+  status?: "planning";
 };
 
 export const projects: Project[] = [
@@ -62,17 +63,18 @@ export const projects: Project[] = [
   },
   {
     slug: "tool-share-app",
+    status: "planning",
     number: "02",
-    type: "Community platform",
+    type: "Work in progress · Planning & setup",
     title: "Tool Share App",
     summary:
-      "A full-stack app that allows friends to list tools, request to borrow them, and track ownership and borrowing status.",
+      "An early-stage idea for helping friends share tools. So far, I’ve only worked on planning and some initial environment setup; the application’s features have not been implemented.",
     problem:
       "Useful tools are expensive, take up space, and often sit unused. Neighbors may be willing to share, but they need a reliable way to see what is available and coordinate borrowing.",
     goal:
       "Create a straightforward full-stack platform where friends can list tools, find what they need, submit borrowing requests, and clearly understand ownership and borrowing status.",
     role:
-      "I designed the database model and REST API, built the Java Spring Boot backend, connected the React interface to each borrowing workflow, and containerized the application with Docker for a more consistent development and deployment setup.",
+      "My work so far is limited to planning the project and beginning environment setup. The next stage is to narrow the first version’s scope, design the data model and API, and start implementing a basic tool-listing workflow.",
     tech: [
       "React",
       "Java",
@@ -88,17 +90,17 @@ export const projects: Project[] = [
       "Validation and feedback for important actions",
     ],
     challenges:
-      "Borrowing is a multi-person workflow with several possible states. Keeping the React client, Spring Boot API, and PostgreSQL data aligned while making ownership and request states understandable required careful database and API design.",
+      "Borrowing involves multiple people and states, from a request through approval and return. A design question ahead is how to represent ownership, availability, and borrowing status consistently across the interface, API, and database.",
     learned:
-      "I gained a stronger appreciation for defining domain language early. Clear names for ownership, requests, approvals, returns, and availability made the database, REST endpoints, and interface easier to reason about together.",
+      "I want to use this project to practice defining a clear domain model, building a React interface backed by a Spring Boot API, and testing a workflow across application layers. Those are learning goals for the work ahead.",
     improvements: [
-      "Add location-aware discovery and filtering",
-      "Introduce notifications for request updates",
-      "Expand containerized integration and API test coverage",
+      "Define the first version’s scope and borrowing workflow",
+      "Finish initial environment setup and design the data model and API",
+      "Build and test a basic tool-listing workflow before adding borrowing requests",
     ],
-    highlight: "Built for sharing",
+    highlight: "Just getting started",
     className: "project-blue",
-    tags: ["React", "Spring Boot", "PostgreSQL", "Docker"],
+    tags: ["Planning", "Environment setup", "Work in progress"],
   },
   {
     slug: "website-redesign",

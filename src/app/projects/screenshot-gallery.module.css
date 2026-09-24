@@ -1,0 +1,21 @@
+.intro { max-width: 650px; color: #5d706d; line-height: 1.7; margin-bottom: 32px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px; }
+.figure { margin: 0; min-width: 0; }
+.featured { grid-column: 1 / -1; }
+.imageLink { display: block; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #f5f7fa; box-shadow: 0 12px 30px #193e3b12; }
+.imageLink img { display: block; width: 100%; height: auto; }
+.imageLink:focus-visible, .figure figcaption a:focus-visible { outline: 3px solid var(--forest); outline-offset: 5px; }
+.figure figcaption { display: flex; align-items: baseline; gap: 18px; padding: 22px 0 0; }
+.number { color: #9c493a; font-size: 11px; }
+.figure h3 { font-size: 22px; margin: 0 0 10px; }
+.figure p { color: #5d706d; font-size: 14px; line-height: 1.7; margin-bottom: 12px; max-width: 650px; }
+.figure figcaption a { font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.mobile { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; padding: 40px; background: var(--paper); border: 1px solid var(--line); }
+.mobile .imageLink { width: min(300px, 100%); justify-self: center; }
+.mobile figcaption { padding: 0; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 700px) {
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .mobile { grid-template-columns: minmax(0, 1fr); padding: 24px; gap: 28px; }
+  .mobile .imageLink { max-width: 260px; }
+}

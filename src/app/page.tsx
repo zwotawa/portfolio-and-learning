@@ -24,8 +24,8 @@ const featuredProjects = [
     slug: "tool-share-app",
     title: "Tool Share App",
     description:
-      "A full-stack app for friends to list tools, request to borrow them, and track ownership and borrowing status.",
-    tags: ["React", "Spring Boot", "Docker"],
+      "An early-stage tool-sharing project. Only planning and some initial environment setup are underway; app features are not yet implemented.",
+    tags: ["Work in progress", "Planning & setup"],
     className: "home-project-blue",
   },
   {

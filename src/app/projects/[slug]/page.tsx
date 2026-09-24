@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Github } from "../../ui/icons";
 import { getProject, projects } from "../project-data";
+import { LifeCopilotGallery } from "../life-copilot-gallery";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -38,6 +39,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const previousProject =
     projectIndex > 0 ? projects[projectIndex - 1] : undefined;
   const nextProject = projects[(projectIndex + 1) % projects.length];
+  const isPlanning = project.status === "planning";
 
   return (
     <>
@@ -75,12 +77,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="shell detail-two-column">
           <article>
             <p className="detail-label">Problem</p>
-            <h2>What need did this solve?</h2>
+            <h2>{isPlanning ? "The problem I want to address." : "What need did this solve?"}</h2>
             <p>{project.problem}</p>
           </article>
           <article>
             <p className="detail-label">Goal</p>
-            <h2>What was I trying to build?</h2>
+            <h2>{isPlanning ? "What I plan to build." : "What was I trying to build?"}</h2>
             <p>{project.goal}</p>
           </article>
         </div>
@@ -89,13 +91,13 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="shell detail-role-section">
         <div>
           <p className="eyebrow">
-            <span /> My role
+            <span /> {isPlanning ? "Progress so far" : "My role"}
           </p>
-          <h2>From problem framing<br />through implementation.</h2>
+          <h2>{isPlanning ? "Planning and initial setup." : <>From problem framing<br />through implementation.</>}</h2>
           <p>{project.role}</p>
         </div>
         <aside className="tech-panel">
-          <p className="detail-label">Tech stack</p>
+          <p className="detail-label">{isPlanning ? "Planned tech stack" : "Tech stack"}</p>
           <ul>
             {project.tech.map((item) => (
               <li key={item}>{item}</li>
@@ -109,13 +111,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <div className="section-heading">
             <div>
               <p className="eyebrow light">
-                <span /> Key features
+                <span /> {isPlanning ? "Planned features" : "Key features"}
               </p>
-              <h2>What the experience<br />is built to do.</h2>
+              <h2>{isPlanning ? "The intended experience." : <>What the experience<br />is built to do.</>}</h2>
             </div>
             <p>
-              The primary functionality supporting the project’s central user
-              need.
+              {isPlanning ? "These features describe the current direction for the app. None are implemented yet, and the scope may change as development begins." : "The primary functionality supporting the project’s central user need."}
             </p>
           </div>
           <div className="feature-list">
@@ -131,18 +132,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
       <section className="shell reflection-grid">
         <article>
-          <p className="detail-label">Challenges</p>
-          <h2>Where the work got difficult.</h2>
+          <p className="detail-label">{isPlanning ? "Design questions ahead" : "Challenges"}</p>
+          <h2>{isPlanning ? "What needs to be worked through." : "Where the work got difficult."}</h2>
           <p>{project.challenges}</p>
         </article>
         <article className="learning-card">
-          <p className="detail-label">What I learned</p>
-          <h2>What I’ll carry forward.</h2>
+          <p className="detail-label">{isPlanning ? "Learning goals" : "What I learned"}</p>
+          <h2>{isPlanning ? "What I want to practice." : "What I’ll carry forward."}</h2>
           <p>{project.learned}</p>
         </article>
       </section>
 
-      <section className="project-proof">
+      {!isPlanning && <section className="project-proof">
         <div className="shell">
           <div className="proof-heading">
             <div>
@@ -163,6 +164,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
           </div>
 
+          {project.slug === "life-copilot" ? <LifeCopilotGallery /> : <>
           <div className={`browser-mockup ${project.className}`}>
             <div className="browser-bar">
               <span />
@@ -194,13 +196,14 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             Stylized interface preview. Replace with final product screenshots
             or an embedded demo as the project evolves.
           </p>
+          </>}
         </div>
-      </section>
+      </section>}
 
       <section className="shell improvements-section">
         <div>
           <p className="eyebrow">
-            <span /> Next improvements
+            <span /> {isPlanning ? "Next steps" : "Next improvements"}
           </p>
           <h2>Where this goes next.</h2>
         </div>
