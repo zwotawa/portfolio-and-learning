@@ -40,12 +40,41 @@ const featuredProjects = [
 ];
 
 const skills = [
-  { label: "Frontend", items: ["React", "Angular", "TypeScript"] },
-  { label: "Backend", items: ["C#", ".NET", "Java", "Spring Boot"] },
-  { label: "Database", items: ["PostgreSQL", "MongoDB"] },
   {
-    label: "Practices",
-    items: ["Agile", "BDD / TDD", "REST APIs", "Product thinking"],
+    label: "Front-End Development",
+    description:
+      "Professional front-end experience with React at Express Scripts/Cigna and Angular at Edward Jones, building enterprise interfaces around real business workflows, usability, and maintainability.",
+    items: ["Angular", "React", "TypeScript", "JavaScript", "HTML", "CSS", "Responsive interfaces", "Component-based UI"],
+  },
+  {
+    label: "Back-End & API Development",
+    description:
+      "Expanding full-stack skills through Life Copilot’s C#/.NET APIs, custom JWT authentication, and goal rotation logic for weekly planning and daily surfacing. Building on professional Java exposure, with Spring Boot practice through Tool Share.",
+    items: ["C#", ".NET", "Java", "Spring Boot", "REST APIs", "JWT authentication", "Business logic"],
+  },
+  {
+    label: "Databases & Persistence",
+    description:
+      "Experience with MongoDB at Express Scripts/Cigna and PostgreSQL in Life Copilot, connecting application workflows to persistent data for planning and progress tracking. Growing skills in relational modeling and data access.",
+    items: ["PostgreSQL", "MongoDB", "Relational modeling", "Data access", "DBeaver", "Migrations / seeding"],
+  },
+  {
+    label: "Testing, Agile & Delivery",
+    description:
+      "Professional experience collaborating in agile teams and contributing to tested enterprise applications. Edward Jones work included Angular, Kotlin, and Android Studio in financial-services software, with an emphasis on incremental delivery.",
+    items: ["Agile", "Scrum", "BDD / TDD", "Automated testing", "Collaboration", "Iterative delivery", "Kotlin", "Android Studio"],
+  },
+  {
+    label: "Cloud, DevOps & Tooling",
+    description:
+      "Hands-on project experience deploying Life Copilot across Vercel and Azure, configuring environments, and troubleshooting deployments. Tool Share adds Docker and local setup practice as I develop more reliable workflows.",
+    items: ["Azure", "Vercel", "Docker", "Git", "GitHub", "Environment configuration", "Deployment troubleshooting"],
+  },
+  {
+    label: "Product & Business Thinking",
+    description:
+      "My accounting background and financial-services experience help me understand business constraints and user needs. I apply that perspective to practical features such as Life Copilot’s weekly planning and progress tracking.",
+    items: ["Accounting background", "Financial services", "Workflow analysis", "User-centered problem solving", "Product thinking"],
   },
 ];
 
@@ -74,8 +103,7 @@ export default function Home() {
             </Link>
             <a
               className="button button-outline"
-              href="/Zachary-Wotawa-Resume.pdf"
-              download
+              href="https://drive.google.com/uc?export=download&id=1bDx9eRqPVPzL75UOqhnlNgXG4xrbdWzm"
             >
               <FileText /> Download Resume
             </a>
@@ -223,8 +251,9 @@ export default function Home() {
             <em>whole experience.</em>
           </h2>
           <p>
-            A growing technical toolkit, supported by collaborative practices
-            and a product-minded approach.
+            Professional front-end experience, expanding into full-stack
+            development through hands-on projects and ongoing Computer Science
+            degree work.
           </p>
         </div>
         <div className="skills-list">
@@ -232,7 +261,8 @@ export default function Home() {
             <article key={group.label}>
               <span>0{index + 1}</span>
               <h3>{group.label}</h3>
-              <div>
+              <p>{group.description}</p>
+              <div className="skill-tags">
                 {group.items.map((item) => (
                   <span key={item}>{item}</span>
                 ))}
@@ -257,7 +287,7 @@ export default function Home() {
           <Link className="button button-light" href="/contact">
             Start a conversation <ArrowUpRight />
           </Link>
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <a href="https://github.com/zwotawa" target="_blank" rel="noreferrer">
             <Github /> GitHub
           </a>
         </div>
